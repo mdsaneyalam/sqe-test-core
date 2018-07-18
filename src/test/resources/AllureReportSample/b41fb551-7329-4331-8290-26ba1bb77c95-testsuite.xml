@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:test-suite start="1502799616373" stop="1502799653795" version="1.5.4" xmlns:ns2="urn:model.allure.qatools.yandex.ru">
+    <name>Surefire suite : Surefire test</name>
+    <title>Surefire suite : Surefire test</title>
+    <test-cases>
+        <test-case start="1502799616478" stop="1502799616580" status="passed">
+            <name>globalReportDirWebTest</name>
+            <steps>
+                <step start="1502799616453" stop="1502799616455" status="passed">
+                    <name>logMessage[========NEW TEST SESSION========]</name>
+                    <title>========NEW TEST SESSION========</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799616480" stop="1502799616480" status="passed">
+                    <name>logMessage[Verify the global report dir was set/created.]</name>
+                    <title>Verify the global report dir was set/created.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Surefire suite"/>
+                <label name="testGroup" value="Surefire test"/>
+                <label name="testClass" value="com.viacom.test.coretest.uitests.tests.AllureReportTests"/>
+                <label name="testMethod" value="globalReportDirWebTest"/>
+                <label name="feature" value="Web"/>
+                <label name="host" value="default"/>
+                <label name="thread" value="7811@localhost.pool-1-thread-1(22)"/>
+            </labels>
+        </test-case>
+        <test-case start="1502799616587" stop="1502799649244" status="passed">
+            <name>attachScreenshotWebTest</name>
+            <steps>
+                <step start="1502799616585" stop="1502799616585" status="passed">
+                    <name>logMessage[========NEW TEST SESSION========]</name>
+                    <title>========NEW TEST SESSION========</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799616588" stop="1502799616589" status="passed">
+                    <name>logMessage[Start a webdriver instance on the lab.]</name>
+                    <title>Start a webdriver instance on the lab.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799644626" stop="1502799644627" status="passed">
+                    <name>logMessage[Setting active proxy server to proxy server with port '10502'.]</name>
+                    <title>Setting active proxy server to proxy server with port '10502'.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799644671" stop="1502799644672" status="passed">
+                    <name>logMessage[Clearing proxy log for proxy server on port '10502'.]</name>
+                    <title>Clearing proxy log for proxy server on port '10502'.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799646659" stop="1502799646659" status="passed">
+                    <name>logMessage[Webdriver session successfully created on 'null' for desktop os 'MAC' for browser 'chrome' on '10.15.19.14'.]</name>
+                    <title>Webdriver session successfully created on 'null' for desktop os 'MAC' for browser 'chrome' on '10.15.19.14'.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799646660" stop="1502799646660" status="passed">
+                    <name>logMessage[Open a webpage.]</name>
+                    <title>Open a webpage.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799648446" stop="1502799648446" status="passed">
+                    <name>logMessage[Attach a screenshot to the allure report.]</name>
+                    <title>Attach a screenshot to the allure report.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments>
+                <attachment title="Success Screenshot" source="58a593bf-d4c8-4b3a-a60a-e5b76bd028e7-attachment.png" type="image/png"/>
+            </attachments>
+            <labels>
+                <label name="testSuite" value="Surefire suite"/>
+                <label name="testGroup" value="Surefire test"/>
+                <label name="testClass" value="com.viacom.test.coretest.uitests.tests.AllureReportTests"/>
+                <label name="testMethod" value="attachScreenshotWebTest"/>
+                <label name="feature" value="Web"/>
+                <label name="host" value="default"/>
+                <label name="thread" value="7811@localhost.pool-1-thread-2(25)"/>
+            </labels>
+        </test-case>
+        <test-case start="1502799649255" stop="1502799653779" status="passed">
+            <name>generateWebReportTest</name>
+            <steps>
+                <step start="1502799649246" stop="1502799649246" status="passed">
+                    <name>logMessage[========NEW TEST SESSION========]</name>
+                    <title>========NEW TEST SESSION========</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799649270" stop="1502799649270" status="passed">
+                    <name>logMessage[DEBUG - global report dir: /home/jenkins/temp/ReportDir1fa7e6679e0b47b08e2af8f67]</name>
+                    <title>DEBUG - global report dir: /home/jenkins/temp/ReportDir1fa7e6679e0b47b08e2af8f67</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799649270" stop="1502799649270" status="passed">
+                    <name>logMessage[Generate the report and verify success.]</name>
+                    <title>Generate the report and verify success.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+                <step start="1502799652271" stop="1502799652272" status="passed">
+                    <name>logMessage[Upload the report to S3.]</name>
+                    <title>Upload the report to S3.</title>
+                    <attachments/>
+                    <steps/>
+                </step>
+            </steps>
+            <attachments/>
+            <labels>
+                <label name="testSuite" value="Surefire suite"/>
+                <label name="testGroup" value="Surefire test"/>
+                <label name="testClass" value="com.viacom.test.coretest.uitests.tests.AllureReportTests"/>
+                <label name="testMethod" value="generateWebReportTest"/>
+                <label name="feature" value="Web"/>
+                <label name="host" value="default"/>
+                <label name="thread" value="7811@localhost.pool-1-thread-3(45)"/>
+            </labels>
+        </test-case>
+    </test-cases>
+    <labels>
+        <label name="framework" value="TestNG"/>
+        <label name="language" value="JAVA"/>
+    </labels>
+</ns2:test-suite>

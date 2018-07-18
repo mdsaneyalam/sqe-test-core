@@ -1,0 +1,83 @@
+<suite name="MQE Test Core Test Suite" parallel="methods" preserve-order="true" thread-count="1">
+
+    <!-- RUNTIME CONFIG -->
+    <parameter name="MobileOS" value="iOS"></parameter> <!-- Android, iOS, desktop, roku, appletv -->
+    <parameter name="MobileBrowser" value="null"></parameter> <!-- Chrome, Safari -->
+    <parameter name="ReRunOnFailure" value="false"></parameter> <!-- true, false -->
+    <parameter name="ReRunOnFailureCount" value="0"></parameter>
+    <parameter name="RunAsFactory" value="false"></parameter> <!-- true, false -->
+    <parameter name="UploadReportToJenkins" value="false"></parameter>
+    <parameter name="DebugProxyPort" value="8889"></parameter>
+    
+    <!-- EMAIL CONFIG -->
+    <parameter name="SendChatReport" value="false"></parameter>
+    <parameter name="SendReportAutoEmails" value="false"></parameter>
+    <parameter name="EmailSenderAddress" value="NOREPLY@MQE-NATIVE-MONITORING.com"></parameter>
+    <parameter name="SendReportEmailAddress" value="brandon.clark@viacom.com"></parameter>
+    <parameter name="GmailRelayHost" value="smtp.gmail.com"></parameter>
+    <parameter name="GmailRelayPort" value="587"></parameter>
+    
+    <!-- APP CONFIG -->
+    <parameter name="MQEHealthTestAndroidAppUrl" value="https://dl.dropboxusercontent.com/s/10b5ujzj2bf0muo/MQEDeviceHealth.apk"></parameter>
+    <parameter name="MQEHealthTestiOSAppUrl" value=""></parameter>
+    <parameter name="MQEHealthTestAndroidAppPackage" value="devicehealthtest.mqe.com.mqedevicehealthtest"></parameter>
+    <parameter name="MQEHealthTestAndroidLaunchActivity" value="MainActivity"></parameter>
+    <parameter name="RokuAppUrl" value="https://dl.dropboxusercontent.com/s/whbknan0985cj5k/BET.zip"></parameter>
+    <parameter name="MQEHealthTestiOSBundleID" value="com.mqe.devicehealthtest"></parameter>
+    <parameter name="AutoAcceptiOSAlerts" value="true"></parameter>
+    <parameter name="iOSWaitForAppScript" value="$.delay(1000); true;"></parameter>
+    <parameter name="ApplicationTitle" value="MQE Test Core Test Suite"></parameter>
+    
+    <!-- REPORT CONFIG -->
+    <parameter name="PathToScreenshots" value="/test-output/screenshots/"></parameter>
+    <parameter name="PathToAllureiOSResults" value="/test-output/allure-results/iOS/"></parameter>
+    <parameter name="PathToAllureAndroidResults" value="/test-output/allure-results/Android/"></parameter>
+    <parameter name="PathToAllureWebResults" value="/test-output/allure-results/Web/"></parameter>
+    <parameter name="S3BucketName" value="CoreTest"></parameter>
+    
+    <!-- SPLUNK CONFIG -->
+    <parameter name="SplunkUsername" value=""></parameter>
+    <parameter name="SplunkPassword" value=""></parameter>
+    <parameter name="SplunkIndex" value="labmaintenance"></parameter>
+    
+    <!-- CHAT CONFIG -->
+    <parameter name="DTEChatWebHookUrl" value="https://vmndigital.hipchat.com/v2/room/2095232/notification?auth_token=K9tEbKt506J0gSMsxFqY6aExGsCh4y8EvtuqiyBv"></parameter>
+    
+    <!-- WEBDRIVER CONFIG -->
+    <parameter name="WaitForWaitTime" value="20"></parameter> <!-- Seconds -->
+    <parameter name="PollingTime" value="500"></parameter> <!-- Milliseconds -->
+    <parameter name="IOSAutoScreenshotWait" value="5"></parameter> <!-- Seconds -->
+    <parameter name="ServerCommandTimeout" value="60"></parameter> <!-- Seconds < grid hub/node timeout -->
+    
+    <!-- LISTENERS -->
+    <listeners>
+        <listener class-name="com.viacom.test.coretest.common.listeners.TestListeners" />
+        <listener class-name="com.viacom.test.coretest.common.listeners.SuiteListeners" />
+        <listener class-name="com.viacom.test.coretest.common.listeners.TestAnnotationTransformer" />
+    </listeners>
+
+    <!-- TEST EXECUTION QUEUE -->
+    <test verbose="1" name="All Tests" annotations="JDK">
+
+        <!-- TEST GROUPS
+            "Full" - all tests in the test suite.
+            "Certify" - a subset of the full test group that is required to certify a build. 
+            "Broken" - those tests that are broken and safe to ignore until they can be resolved. 
+            "OnRequest" - those tests that are so low priority and so time intensive we only run on request. 
+        -->
+
+        <groups>
+            <run>
+                <include name="Full" />
+                <exclude name="Broken" />
+                <exclude name="Sensitive" />
+            </run>
+        </groups>
+          
+        <packages>
+            <package name="com.viacom.test.coretest.uitests.tests.*" />
+        </packages>
+        
+    </test>
+
+</suite>

@@ -1,0 +1,25 @@
+#target and testng report output
+target/
+test-output/
+
+#sikuli libs and screenshots
+screenshots/
+libs/
+
+#log files
+logs/
+
+#ide project files
+.settings/
+.idea/
+.classpath
+.project
+
+#java class files
+out/
+*.class
+
+#ds store
+.DS_Store
+
+*.iml

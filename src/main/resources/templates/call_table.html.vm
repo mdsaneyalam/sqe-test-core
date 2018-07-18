@@ -1,0 +1,29 @@
+<table border="1" style="font-family: Arial, Courier New, monospace; font-size: 0.7em; color: black;">
+    <tr>
+        <td style="background-color: #cccccc;">PARAMETER</td>
+        <td style="background-color: #cccccc;">EXPECTED VALUE</td>
+        <td style="background-color: #cccccc;">ACTUAL VALUE</td>
+    </tr>
+    #foreach ($key in $expectedMap.keySet())
+        #if (!$actualMap.keySet().contains($key))
+            #set ($actualParameter = "")
+        #else
+            #set ($actualParameter = $actualMap.get($key))
+        #end
+        #set ($expectedParameter = $expectedMap.get($key))
+        #if ($expectedParameter.equals($actualParameter))
+                #set ($color = "#44aa44")
+        #else
+            #if ($actualParameter.contains($expectedParameter))
+                #set ($color = "#fcfc00")
+            #else
+                #set ($color = "#ff4444")
+            #end
+        #end
+        <tr style="background-color: $color;">
+            <td style="background-color: #cccccc;">$key</td>
+            <td>$expectedParameter</td>
+            <td>$actualParameter</td>
+        </tr>
+    #end
+</table>
